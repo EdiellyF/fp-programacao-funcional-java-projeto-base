@@ -23,6 +23,14 @@ public class AppProgramacaoFuncional {
 
     public AppProgramacaoFuncional() {
 
+        double maiorNota = estudantes
+                .stream()
+                .filter(( e) -> e.getSexo() == 'M')
+                .mapToDouble(( e) -> e.getNota())
+                .max()
+                .orElse(0);
+
+        System.out.println("Maior nota: " + maiorNota);
     }
 
     public static void main(String[] args) {
